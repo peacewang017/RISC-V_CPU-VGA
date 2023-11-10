@@ -17,8 +17,8 @@ module datapath(CLK,Go,RST,button_a,button_w,button_d,button_s,AN,SEG,Addr2,Dout
     input Go;
     input RST;
     input button_a,button_w,button_d,button_s;
-    input v_sync;
     input [9:0]Addr2;
+    input v_sync;
     output [31:0]Dout2;
     output [7:0]AN,SEG;
     
@@ -84,7 +84,7 @@ module datapath(CLK,Go,RST,button_a,button_w,button_d,button_s,AN,SEG,Addr2,Dout
     );
 
 
-    divider #(500000) divider2(
+    divider #(100000) divider2(
         .clk(CLK),
         .clk_N(CLK_N)
     );
@@ -178,7 +178,8 @@ module datapath(CLK,Go,RST,button_a,button_w,button_d,button_s,AN,SEG,Addr2,Dout
         .button_w(button_w),
         .Addr2(Addr2),
         .Dout2(Dout2),
-        .v_sync(v_sync) 
+        .rst(RST),
+        .v_sync(v_sync)
     );
     extender_0 #(.in_WIDTH(16),.out_WIDTH(32)) extender2(
         .in(mem_out[15:0]),

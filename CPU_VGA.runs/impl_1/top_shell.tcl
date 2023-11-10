@@ -75,7 +75,7 @@ set rc [catch {
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_CDC [current_project]
   add_files -quiet C:/Users/12456/Desktop/sources/CPU_VGA/CPU_VGA.runs/synth_1/top_shell.dcp
-  read_ip -quiet c:/Users/12456/Desktop/sources/CPU_VGA/CPU_VGA.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+  read_ip -quiet C:/Users/12456/Desktop/sources/CPU_VGA/CPU_VGA.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
   read_xdc C:/Users/12456/Desktop/sources/CPU_VGA/Nexys4DDR_Master.xdc
   link_design -top top_shell -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb

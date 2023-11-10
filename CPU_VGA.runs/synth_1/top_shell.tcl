@@ -51,7 +51,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/12456/Desktop/sources/CPU_VGA/CPU_VGA.srcs/sources_1/new/vga_sync_generator.v
   C:/Users/12456/Desktop/sources/CPU_VGA/CPU_VGA.srcs/sources_1/new/top_shell.v
 }
-read_ip -quiet c:/Users/12456/Desktop/sources/CPU_VGA/CPU_VGA.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+read_ip -quiet C:/Users/12456/Desktop/sources/CPU_VGA/CPU_VGA.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/12456/Desktop/sources/CPU_VGA/CPU_VGA.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/12456/Desktop/sources/CPU_VGA/CPU_VGA.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/12456/Desktop/sources/CPU_VGA/CPU_VGA.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]

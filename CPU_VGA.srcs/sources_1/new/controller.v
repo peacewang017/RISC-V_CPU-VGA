@@ -56,6 +56,7 @@ module alu_controller(Funct7,Funct3,OpCode,ALUOP);
         else if(Funct7==7'b0000000 && Funct3==3'b100 && OpCode==5'b01100) ALUOP=4'b1001;//xor
         else if(Funct7==7'b0000001 && Funct3==3'b000 && OpCode==5'b01100) ALUOP=4'b0011;//mul
         else if(Funct7==7'b0000001 && Funct3==3'b100 && OpCode==5'b01100) ALUOP=4'b0100;//div
+        else if(Funct7==7'b0000001 && Funct3==3'b110 && OpCode==5'b01100) ALUOP=4'b1101;//rem
         else if(Funct3==3'b000 && OpCode==5'b00100) ALUOP=4'b0101;//addi
         else if(Funct3==3'b111 && OpCode==5'b00100) ALUOP=4'b0111;//andi
         else if(Funct3==3'b110 && OpCode==5'b00100) ALUOP=4'b1000;//ori
@@ -103,6 +104,9 @@ module signal_controller(Funct7,Funct3,OpCode,MemtoReg,MemWrite,ALU_src,RegWrite
         end
         else if(Funct7==1 && Funct3 == 0 && OpCode == 5'hc) begin
             {MemtoReg,MemWrite,ALU_src,RegWrite,ecall,S_Type,BEQ,BNE,Jal,jalr,AUIPC,LHU,BGEU,CSRRSI,CSRRCI,LUI,BLT} = 17'b00010000000000000;//div
+        end
+        else if(Funct7==1 && Funct3 == 6 && OpCode == 5'hc) begin
+            {MemtoReg,MemWrite,ALU_src,RegWrite,ecall,S_Type,BEQ,BNE,Jal,jalr,AUIPC,LHU,BGEU,CSRRSI,CSRRCI,LUI,BLT} = 17'b00010000000000000;//rem
         end
         else if(Funct7==0 && Funct3 == 3 && OpCode == 5'hc) begin
             {MemtoReg,MemWrite,ALU_src,RegWrite,ecall,S_Type,BEQ,BNE,Jal,jalr,AUIPC,LHU,BGEU,CSRRSI,CSRRCI,LUI,BLT} = 17'b00010000000000000;//sltu

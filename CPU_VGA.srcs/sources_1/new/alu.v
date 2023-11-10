@@ -60,6 +60,9 @@ module alu(x,y,alu_op,equal,bigger_or_equal,result);
                 result = ($unsigned(x)<$unsigned(y)) ? 1:0;
                 bigger_or_equal = ($unsigned(x)>=$unsigned(y)) ? 1:0;
             end
+            13: begin
+                result = x%y;
+            end
         endcase
     end
 endmodule 

@@ -8,6 +8,9 @@ module color_trans(ram_data_out,vdata);
         else if(ram_data_out==32'h00000002) begin
             vdata <= 12'h00f;
         end
+        else if(ram_data_out==32'h00000000) begin
+            vdata <= 12'h444;
+        end
         else begin
             vdata <= 12'h000;
         end
